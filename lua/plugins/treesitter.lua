@@ -1,3 +1,5 @@
+-- TREE SITTER FOR SYNTAX HIGHLIGHTING --
+
 return { 
     "nvim-treesitter/nvim-treesitter", 
     build = ":TSUpdate", 

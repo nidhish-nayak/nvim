@@ -1,3 +1,5 @@
+-- TELESCOPE TO FUZZY SEARCH FILES & GREP --
+
 return {
     'nvim-telescope/telescope.nvim', tag = '-1.1.6',
     dependencies = { 'nvim-lua/plenary.nvim' },

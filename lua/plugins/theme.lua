@@ -1,13 +1,12 @@
--- require("rose-pine").setup()
--- vim.cmd("colorscheme rose-pine")
+-- THEMES --
 
 return { 
-    "catppuccin/nvim", 
-    lazy = false, 
-    name = "catppuccin", 
-    priority = 999, 
-    config = function()
-        vim.cmd.colorscheme "catppuccin"
-    end
+   "catppuccin/nvim", 
+   lazy = false, 
+   name = "catppuccin", 
+   priority = 1000,
+   config = function()
+      vim.cmd.colorscheme "catppuccin"
+   end
 }
 
