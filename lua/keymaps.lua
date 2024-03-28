@@ -1,3 +1,6 @@
+-- SET NUMBERS FOR NVIM LINES --
+vim.wo.number = true
+
 -- SET TAB & SHIFT WIDTH AS REQUIRED --
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=3")
