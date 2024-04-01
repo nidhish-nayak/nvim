@@ -8,7 +8,8 @@ return {
       config = function()
          local builtin = require("telescope.builtin")
          vim.keymap.set("n", "<leader>ff", builtin.find_files, {}) -- FIND FILES
-         vim.keymap.set("n", "<C-f>", builtin.live_grep, {}) -- GREP FIND
+         vim.keymap.set("n", "<leader>fg", builtin.live_grep, {}) -- GREP FIND
+         vim.keymap.set("n", "<leader>bb", builtin.buffers, {}) -- FILE TABS (BUFFERS)
       end,
    },
    {
