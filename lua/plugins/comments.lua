@@ -7,14 +7,6 @@ return {
 	},
 	lazy = false,
 	config = function()
-		require("Comment").setup({
-			-- KEYMAPS --
-			opleader = {
-				---Line-comment keymap
-				line = "cc",
-				---Block-comment keymap
-				block = "cb",
-			},
-		})
+		require("Comment").setup({})
 	end,
 }
