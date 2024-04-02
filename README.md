@@ -1,6 +1,10 @@
-# Neovim Configuration ⚙️
+# Neovim Configuration
 
 Welcome to my Neovim configuration! This setup is meticulously crafted to enhance your coding experience and boost productivity. Dive in and discover a world of efficient coding, seamless navigation, and powerful features.
+
+## Setup Preview ⚙️
+
+![neovim](https://github.com/nidhish-nayak/neovim-config/assets/76598208/bf962013-ca46-4dd7-9e58-33ef7dc36ed9)
 
 ## File Structure 🗃️
 
