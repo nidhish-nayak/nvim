@@ -1,62 +1,60 @@
 -- AUTOCOMPLETE FEATURES --
 
 return {
-   {
-      "hrsh7th/cmp-nvim-lsp",
-   },
-   {
-      "hrsh7th/cmp-path",
-   },
-   {
-      "L3MON4D3/LuaSnip",
-      dependencies = {
-         "saadparwaiz1/cmp_luasnip",
-         "rafamadriz/friendly-snippets",
-      },
-   },
-   {
-      "hrsh7th/nvim-cmp",
-      dependencies = {
-         { "roobert/tailwindcss-colorizer-cmp.nvim", config = true },
-      },
+	{
+		"hrsh7th/cmp-nvim-lsp",
+	},
+	{
+		"hrsh7th/cmp-path",
+	},
+	{
+		"L3MON4D3/LuaSnip",
+		dependencies = {
+			"saadparwaiz1/cmp_luasnip",
+			"rafamadriz/friendly-snippets",
+		},
+	},
+	{
+		"hrsh7th/nvim-cmp",
+		dependencies = {
+			{ "roobert/tailwindcss-colorizer-cmp.nvim", config = true },
+		},
 
-      config = function()
-         local cmp = require("cmp")
-         require("luasnip.loaders.from_vscode").lazy_load()
+		config = function()
+			local cmp = require("cmp")
+			require("luasnip.loaders.from_vscode").lazy_load()
 
-         -- TAILWIND COLOR BLOCKS --
-         cmp.setup({
-            formatting = { format = require("tailwindcss-colorizer-cmp").formatter }
-         })
+			-- SNIPPETS SETUP --
+			cmp.setup({
+				snippet = {
+					-- REQUIRED - you must specify a snippet engine
+					expand = function(args)
+						-- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+						require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
+					end,
+				},
+				window = {
+					completion = cmp.config.window.bordered(),
+					documentation = cmp.config.window.bordered(),
+				},
+				mapping = cmp.mapping.preset.insert({
+					["<C-b>"] = cmp.mapping.scroll_docs(-4),
+					["<C-f>"] = cmp.mapping.scroll_docs(4),
+					["<C-Space>"] = cmp.mapping.complete(),
+					["<C-e>"] = cmp.mapping.abort(),
+					["<CR>"] = cmp.mapping.confirm({ select = true }),
+				}),
 
-         -- SNIPPETS SETUP --
-         cmp.setup({
-            snippet = {
-               -- REQUIRED - you must specify a snippet engine
-               expand = function(args)
-                  -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-                  require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
-               end,
-            },
-            window = {
-               completion = cmp.config.window.bordered(),
-               documentation = cmp.config.window.bordered(),
-            },
-            mapping = cmp.mapping.preset.insert({
-               ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-               ["<C-f>"] = cmp.mapping.scroll_docs(4),
-               ["<C-Space>"] = cmp.mapping.complete(),
-               ["<C-e>"] = cmp.mapping.abort(),
-               ["<CR>"] = cmp.mapping.confirm({ select = true }),
-            }),
+				sources = cmp.config.sources({
+					{ name = "nvim_lsp" },
+					{ name = "luasnip" }, -- For luasnip users.
+				}, {
+					{ name = "buffer" },
+				}),
 
-            sources = cmp.config.sources({
-               { name = "nvim_lsp" },
-               { name = "luasnip" }, -- For luasnip users.
-            }, {
-               { name = "buffer" },
-            }),
-         })
-      end,
-   },
+				-- TAILWIND DEPENDENCY --
+				formatting = { format = require("tailwindcss-colorizer-cmp").formatter },
+			})
+		end,
+	},
 }
