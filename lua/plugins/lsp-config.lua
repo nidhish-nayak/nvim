@@ -17,13 +17,12 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
-		lazy = false,
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
 
 			-- LIST OF SERVERS --
-			local servers = { "lua_ls", "tsserver", "tailwindcss" }
+			local servers = { "lua_ls", "tsserver", "tailwindcss"}
 
 			-- RUN SETUP FOR ALL SERVERS ABOVE --
 			for _, server in ipairs(servers) do
