@@ -1,5 +1,6 @@
 -- SET NUMBERS FOR NVIM LINES --
 vim.wo.number = true
+vim.wo.relativenumber = true
 
 -- SET TAB & SHIFT WIDTH AS REQUIRED --
 vim.cmd("set expandtab")
