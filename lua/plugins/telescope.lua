@@ -10,7 +10,9 @@ return {
             vim.keymap.set("n", "<leader>ff", builtin.find_files, {}) -- FIND FILES
             vim.keymap.set("n", "<leader>fg", builtin.live_grep, {}) -- GREP FIND
             vim.keymap.set("n", "<leader>bb", builtin.buffers, {}) -- FILE TABS (BUFFERS)
-            vim.keymap.set("n", "<leader>fr", builtin.lsp_references, {}) -- FIND REFERENCES
+            vim.keymap.set("n", "<leader>fr", builtin.lsp_references, {}) -- FIND REFS
+            vim.keymap.set("n", "<leader>fd", builtin.lsp_definitions, {}) -- FIND DEFS
+            vim.keymap.set("n", "<leader>fc", builtin.git_commits, {}) -- SHOW COMMITS
         end,
     },
     {
