@@ -28,3 +28,13 @@ vim.keymap.set("n", "<leader>tn", ":terminal tmux new-session %<CR>", {})
 vim.keymap.set("n", "<leader>ta", ":terminal tmux a -t %<CR>", {})
 vim.keymap.set("n", "<leader>td", ":terminal tmux kill-session -t %<CR>", {})
 vim.keymap.set("n", "<leader>tda", ":terminal tmux kill-session -a<CR>", {})
+
+-- HIGHLIGHT WHEN YANK --
+vim.api.nvim_create_autocmd("TextYankPost", {
+    desc = "Highlight when yanking (copying) text",
+    group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+    callback = function()
+        vim.highlight.on_yank()
+    end,
+})
+
