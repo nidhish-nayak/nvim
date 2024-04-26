@@ -22,7 +22,7 @@ return {
             local lspconfig = require("lspconfig")
 
             -- LIST OF SERVERS --
-            local servers = { "lua_ls", "tsserver", "tailwindcss" }
+            local servers = { "lua_ls", "tsserver", "tailwindcss", "svelte" }
 
             -- RUN SETUP FOR ALL SERVERS ABOVE --
             for _, server in ipairs(servers) do
