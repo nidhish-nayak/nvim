@@ -9,7 +9,7 @@ return {
 
             -- CONFIG --
             config.setup({
-                ensure_installed = { "lua", "typescript", "javascript" },
+                ensure_installed = { "lua", "typescript", "javascript", "svelte" },
                 -- AUTO INSTALL HIGHLIGHTS IF NEW LANGUAGE --
                 auto_install = true,
                 auto_tag = { enable = true },

@@ -1,18 +1,19 @@
 -- AUTO CLOSE TAGS FOR HTML --
 
 return {
-   "windwp/nvim-ts-autotag",
-   ft = {
-      "html",
-      "xml",
-      "astro",
-      "javascript",
-      "javascriptreact",
-      "typescript",
-      "typescriptreact",
-   },
+    "windwp/nvim-ts-autotag",
+    ft = {
+        "html",
+        "xml",
+        "astro",
+        "svelte",
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+    },
 
-   config = function()
-      require("nvim-ts-autotag").setup()
-   end,
+    config = function()
+        require("nvim-ts-autotag").setup()
+    end,
 }
