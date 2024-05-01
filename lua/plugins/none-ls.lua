@@ -4,7 +4,6 @@ return {
     "nvimtools/none-ls.nvim",
     lazy = false,
     config = function()
-        vim.lsp.buf.format({ timeout_ms = 5000 })
         local null_ls = require("null-ls")
 
         null_ls.setup({
