@@ -17,6 +17,6 @@ return {
         })
 
         -- KEYMAPS --
-        vim.keymap.set("n", "<A-f>", vim.lsp.buf.format, {})
+        vim.keymap.set("n", "<A-f>", ":lua vim.lsp.buf.format({async = true})<CR>", {})
     end,
 }
